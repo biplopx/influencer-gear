@@ -14,7 +14,7 @@ body {
 .container {
   max-width: 1440px;
   margin: auto;
-  overflow: auto;
+  /* overflow: auto; */
   padding: 0 20px;
 }
 a {
@@ -81,8 +81,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 600px;
-  /* padding: 50px 0; */
 }
 .banner-text {
   flex: 1;
@@ -103,15 +101,17 @@ header {
 .banner-photo img {
   width: 70%;
   display: block;
-  margin: auto auto;
+  margin: auto;
   transition: transform 0.5s ease-in-out;
 }
 .banner-photo img:hover {
   transform: scale(1.2);
 }
 /* Company logos */
-.company .container {
+.company {
   min-height: 60px;
+}
+.company .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,10 +120,10 @@ header {
   border-top: 2px solid #f4f4f4;
   border-bottom: 2px solid #f4f4f4;
 }
-.company .company-logo {
+.company .container .company-logo {
   width: 150px;
 }
-.company .company-logo img {
+.company .container .company-logo img {
   width: 80%;
 }
 /* All collection */
@@ -190,16 +190,46 @@ footer {
   align-items: center;
   text-align: center;
 }
-footer .social-icon {
-  display: flex;
-  justify-content: space-evenly;
-}
-footer .footer-wrapper .social-icon a p {
-  display: block;
-  height: 30px;
-  width: 30px;
-  background: #e02c6d;
-  padding: 10px;
-  border-radius: 40%;
+.social-icon a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #22213c;
+  color: #fff;
+  margin: 10px;
+  border-radius: 50%;
   font-size: 25px;
+  text-align: center;
+}
+/* Mobile */
+@media only screen and (max-width: 814px) {
+  .container {
+    width: 100%;
+  }
+  .navbar .container ul {
+    display: none;
+  }
+  .hero-banner {
+    width: 100%;
+    margin: auto;
+  }
+  .hero-banner .container {
+    flex-direction: column-reverse;
+  }
+  .company .container {
+    flex-wrap: wrap;
+  }
+  .all-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 550px) {
+  .banner-text h1 {
+    font-size: 40px;
+  }
+  .all-products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .company .container {
+    justify-content: space-around;
+  }
 }
