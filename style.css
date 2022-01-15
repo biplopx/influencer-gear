@@ -179,6 +179,13 @@ header {
 .product p {
   margin: 0.75rem 0;
 }
+/* Contact us */
+.contact-us {
+  padding: 100px 0;
+}
+.contact-us .container {
+  display: flex;
+}
 /* Footer */
 footer {
   background: #0a0826;
@@ -217,6 +224,9 @@ footer {
   }
   .company .container {
     flex-wrap: wrap;
+  }
+  .company .container .company-logo {
+    width: 100px;
   }
   .all-products {
     grid-template-columns: repeat(2, 1fr);
